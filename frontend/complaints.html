@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFlow | Complaints</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h2>CampusFlow</h2>
+      <nav>
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="complaints.html">Complaints</a>
+        <a href="lost-found.html">Lost &amp; Found</a>
+      </nav>
+      <button class="btn secondary" onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar"><h1>Complaints</h1></header>
+      <section class="panel complaint-form-panel" id="complaintFormPanel">
+        <h2>Report a campus issue</h2>
+        <p>Submit a complete report so the administration can follow it through.</p>
+        <form id="complaintForm" class="data-form">
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="Facilities">Facilities</option>
+            <option value="Academic">Academic</option>
+            <option value="Safety">Safety</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="title">Title</label>
+          <input id="title" type="text" placeholder="Short description of the issue" required />
+          <label for="description">Details</label>
+          <textarea id="description" rows="4" placeholder="Explain what happened and what support you need" required></textarea>
+          <label for="location">Location</label>
+          <input id="location" type="text" placeholder="Building, room, or area" required />
+          <label for="complaintEvidence">Photo or evidence file</label>
+          <input id="complaintEvidence" type="file" accept="image/*,.pdf,.doc,.docx" />
+          <button class="btn primary" type="submit">Submit complaint</button>
+        </form>
+        <div id="complaintMessage" class="message"></div>
+      </section>
+      <section class="panel">
+        <h2 id="complaintsHeading">My complaints</h2>
+        <div id="complaintsList"></div>
+      </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/complaints.js"></script>
+  </body>
+</html>

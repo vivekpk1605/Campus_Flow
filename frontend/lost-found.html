@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFlow | Lost & Found</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h2>CampusFlow</h2>
+      <nav>
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="complaints.html">Complaints</a>
+        <a href="lost-found.html">Lost &amp; Found</a>
+      </nav>
+      <button class="btn secondary" onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar"><h1>Lost &amp; Found</h1></header>
+      <section class="panel">
+        <h2>Report an item</h2>
+        <form id="lostFoundForm" class="data-form">
+          <select id="itemType" required>
+            <option value="Lost">I lost an item</option>
+            <option value="Found">I found an item</option>
+          </select>
+          <input id="itemName" placeholder="Item name" required />
+          <textarea id="itemDescription" rows="3" placeholder="Describe the item" required></textarea>
+          <input id="itemCategory" placeholder="Category" required />
+          <input id="itemLocation" placeholder="Location" required />
+          <input id="itemDate" type="date" required />
+          <input id="contactInformation" placeholder="Contact information" required />
+          <label for="lostFoundEvidence">Photo or evidence file</label>
+          <input id="lostFoundEvidence" type="file" accept="image/*,.pdf,.doc,.docx" />
+          <button class="btn primary" type="submit">Submit report</button>
+        </form>
+        <div id="lostFoundMessage" class="message"></div>
+      </section>
+      <section class="panel">
+        <div id="lostFoundList"></div>
+      </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/lost-found.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFlow | Rooms</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h2>CampusFlow</h2>
+      <nav>
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="complaints.html">Complaints</a>
+        <a href="lost-found.html">Lost &amp; Found</a>
+      </nav>
+      <button class="btn secondary" onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar"><h1>Rooms</h1></header>
+      <section class="panel role-form" data-roles="ADMIN">
+        <h2>Add room</h2>
+        <form id="roomForm" class="data-form">
+          <input id="roomNumber" placeholder="Room number" required />
+          <input id="building" placeholder="Building" required />
+          <input id="floor" type="number" min="0" placeholder="Floor" required />
+          <input id="roomType" placeholder="Room type" required />
+          <input id="capacity" type="number" min="1" placeholder="Capacity" required />
+          <input id="facilities" placeholder="Facilities" required />
+          <button class="btn primary" type="submit">Add room</button>
+        </form>
+        <div id="roomMessage" class="message"></div>
+      </section>
+      <section class="panel">
+        <div id="roomsList"></div>
+      </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/rooms.js"></script>
+  </body>
+</html>

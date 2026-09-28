@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFlow | Requests</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h2>CampusFlow</h2>
+      <nav>
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="complaints.html">Complaints</a>
+        <a href="lost-found.html">Lost &amp; Found</a>
+        <a href="requests.html">OD &amp; Leave</a>
+      </nav>
+      <button class="btn secondary" onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar"><h1>Requests</h1></header>
+      <div class="request-grid" id="requestForms">
+        <section class="panel request-form-card">
+          <p class="chart-kicker">On-duty request</p>
+          <h2>OD form submission</h2>
+          <p class="section-description">Apply to leave campus for an approved academic or campus purpose.</p>
+          <form id="odForm" class="data-form">
+            <label for="odPurpose">Purpose</label>
+            <input id="odPurpose" placeholder="Example: Sports competition" required />
+            <label for="odDestination">Destination</label>
+            <input id="odDestination" placeholder="Where are you going?" required />
+            <div class="form-row">
+              <div>
+                <label for="odStartDate">From date</label>
+                <input id="odStartDate" type="date" required />
+              </div>
+              <div>
+                <label for="odEndDate">To date</label>
+                <input id="odEndDate" type="date" required />
+              </div>
+            </div>
+            <label for="odDetails">Additional details</label>
+            <textarea id="odDetails" rows="3" placeholder="Explain your request" required></textarea>
+            <label for="odEvidence">Supporting document <span>(optional, max 5 MB)</span></label>
+            <input id="odEvidence" type="file" accept="image/*,.pdf,.doc,.docx" />
+            <button class="btn primary" type="submit">Submit OD form</button>
+          </form>
+          <div id="odMessage" class="message" role="status" aria-live="polite"></div>
+        </section>
+        <section class="panel request-form-card">
+          <p class="chart-kicker">Permission request</p>
+          <h2>Leave permission submission</h2>
+          <p class="section-description">Request leave for personal, medical, or family-related reasons.</p>
+          <form id="leaveForm" class="data-form">
+            <label for="leaveReason">Reason</label>
+            <input id="leaveReason" placeholder="Reason for leave" required />
+            <div class="form-row">
+              <div>
+                <label for="leaveStartDate">From date</label>
+                <input id="leaveStartDate" type="date" required />
+              </div>
+              <div>
+                <label for="leaveEndDate">To date</label>
+                <input id="leaveEndDate" type="date" required />
+              </div>
+            </div>
+            <label for="leaveDetails">Additional details</label>
+            <textarea id="leaveDetails" rows="3" placeholder="Explain your request" required></textarea>
+            <label for="leaveEvidence">Supporting document <span>(optional, max 5 MB)</span></label>
+            <input id="leaveEvidence" type="file" accept="image/*,.pdf,.doc,.docx" />
+            <button class="btn primary" type="submit">Submit leave permission</button>
+          </form>
+          <div id="leaveMessage" class="message" role="status" aria-live="polite"></div>
+        </section>
+      </div>
+      <section class="panel">
+        <h2 id="requestListTitle">My requests</h2>
+        <div id="requestList"></div>
+      </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/requests.js"></script>
+  </body>
+</html>

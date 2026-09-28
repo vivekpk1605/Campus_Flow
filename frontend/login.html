@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFlow | Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-layout">
+      <section class="auth-mirror">
+        <p class="eyebrow">CampusFlow / access point</p>
+        <h1>One campus.<br /><em>Many ways forward.</em></h1>
+        <div class="mirror-line"></div>
+        <p>Announcements, people, spaces, and support in one clear rhythm.</p>
+        <div class="mirror-stats">
+          <span>01 / connect</span>
+          <span>02 / contribute</span>
+          <span>03 / belong</span>
+        </div>
+      </section>
+      <section class="auth-panel">
+      <div class="auth-card">
+        <p class="auth-kicker">Secure campus workspace</p>
+        <h2>Welcome back</h2>
+        <p>Secure access for students, faculty, and administrators.</p>
+
+        <form id="loginForm">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="name@campus.edu" required />
+
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="********" required />
+
+          <button type="submit" class="btn primary full">Login</button>
+        </form>
+
+        <div id="loginMessage" class="message"></div>
+        <p class="auth-link">New to CampusFlow? <a href="register.html">Create an account</a></p>
+      </div>
+      </section>
+    </main>
+    <script src="js/login.js"></script>
+    <script src="js/ai-widget.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFlow | Create Account</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-layout">
+      <section class="auth-mirror register-mirror">
+        <p class="eyebrow">CampusFlow / new profile</p>
+        <h1>Put your<br /><em>campus story</em> in motion.</h1>
+        <div class="mirror-line"></div>
+        <p>Your role shapes the tools and updates you see after sign-in.</p>
+      </section>
+      <section class="auth-panel">
+      <div class="auth-card">
+        <p class="auth-kicker">Start your campus profile</p>
+        <h2>Create your account</h2>
+        <p>Join CampusFlow as a student, faculty member, or administrator.</p>
+
+        <form id="registerForm">
+          <label for="name">Full name</label>
+          <input id="name" type="text" placeholder="Your full name" required />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="name@campus.edu" required />
+
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="At least 8 characters" minlength="8" required />
+
+          <label for="role">Account type</label>
+          <select id="role" required>
+            <option value="STUDENT">Student</option>
+            <option value="FACULTY">Faculty</option>
+            <option value="ADMIN">Administrator</option>
+          </select>
+
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" placeholder="Optional" />
+
+          <button type="submit" class="btn primary full">Create account</button>
+        </form>
+
+        <div id="registerMessage" class="message"></div>
+        <p class="auth-link">Already have an account? <a href="login.html">Back to login</a></p>
+      </div>
+      </section>
+    </main>
+    <script src="js/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body data-role="ADMIN">
+    <aside class="sidebar">
+      <h2>CampusFlow</h2>
+      <nav>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="complaints.html">Complaints</a>
+        <a href="lost-found.html">Lost &amp; Found</a>
+        <a href="requests.html">OD &amp; Leave Approvals</a>
+      </nav>
+      <button class="btn secondary" onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h1>Admin Dashboard</h1>
+      </header>
+      <section class="stats-grid">
+        <div class="stat-card"><h3>Students</h3><p id="studentsCount">0</p></div>
+        <div class="stat-card"><h3>Faculty</h3><p id="facultyCount">0</p></div>
+        <div class="stat-card"><h3>Open Complaints</h3><p id="complaintsCount">0</p></div>
+        <div class="stat-card"><h3>Rooms</h3><p id="roomsCount">0</p></div>
+      </section>
+      <section class="panel">
+        <h2>Monitoring</h2>
+        <div id="dashboardData"></div>
+      </section>
+      <section class="panel">
+        <h2>Registered people</h2>
+        <div id="userDirectory"></div>
+      </section>
+      <section class="panel">
+        <h2>Latest complaint reports</h2>
+        <div id="adminComplaintPreview"></div>
+      </section>
+      <section class="chart-grid">
+        <article class="panel chart-panel">
+          <div class="chart-heading">
+            <div>
+              <p class="chart-kicker">Complaint flow</p>
+              <h2>Resolution overview</h2>
+            </div>
+            <span class="chart-note">Live totals</span>
+          </div>
+          <canvas id="complaintsChart" aria-label="Complaint activity line chart"></canvas>
+        </article>
+        <article class="panel chart-panel">
+          <div class="chart-heading">
+            <div>
+              <p class="chart-kicker">Campus snapshot</p>
+              <h2>People and resources</h2>
+            </div>
+            <span class="chart-note">Current data</span>
+          </div>
+          <canvas id="resourcesChart" aria-label="People and resources bar chart"></canvas>
+        </article>
+      </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
